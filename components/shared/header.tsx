@@ -4,7 +4,7 @@ import clsx from "clsx";
 import Image from "next/image";
 import Link from "next/link";
 import type React from "react";
-import { SearchInput } from "./shared/search-input";
+import { SearchInput } from "./search-input";
 
 interface Props {
 	className?: string;
@@ -13,12 +13,12 @@ interface Props {
 export const Header: React.FC<Props> = ({ className }) => {
 	return (
 		<header
-			className={clsx("flex items-center justify-between p-5", className)}
+			className={clsx("flex items-center justify-between p-3.5", className)}
 		>
 			<h1 className="text-xl font-medium">HarmonyHR</h1>
 			<nav className="self-end [&>*]:p-4 [&>*]:rounded-t-md">
 				<Link href="/">Home</Link>
-				<Link className="bg-slate-200" href="/my-info">
+				<Link className="bg-slate-300" href="/my-info">
 					My Info
 				</Link>
 				<Link href="/people">People</Link>
@@ -28,8 +28,8 @@ export const Header: React.FC<Props> = ({ className }) => {
 			</nav>
 
 			<SearchInput />
-			<div className="flex items-center">
-				<Button variant="ghost">
+			<div className="flex items-center gap-2">
+				<Button variant="ghost" size="icon">
 					<Image
 						src={settingsIcon}
 						width={24}
@@ -37,13 +37,13 @@ export const Header: React.FC<Props> = ({ className }) => {
 						alt="settings-icon"
 					/>
 				</Button>
-				<Button variant="ghost">
+				<Button variant="ghost" size="icon">
 					<Image src={helpIcon} alt="settings-icon" />
 				</Button>
-				<Button variant="ghost">
+				<Button variant="ghost" size="icon">
 					<Image src={notificationsIcon} alt="settings-icon" />
 				</Button>
-				<Button variant="ghost">
+				<Button variant="ghost" size="icon">
 					<Image
 						src={
 							"https://i.pinimg.com/736x/94/c3/67/94c36724d7cf4dc3abf21eebd6b92ba6.jpg"
