@@ -4,6 +4,7 @@ import { Inter } from "next/font/google";
 const inter = Inter({ subsets: ["latin"] });
 
 import "./globals.css";
+import { ApolloWrapper } from "@/components/apolo-wrapper";
 import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
@@ -19,7 +20,9 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en">
-			<body className={cn("h-screen", inter.className)}>{children}</body>
+			<body className={cn("h-screen", inter.className)}>
+				<ApolloWrapper>{children}</ApolloWrapper>
+			</body>
 		</html>
 	);
 }
