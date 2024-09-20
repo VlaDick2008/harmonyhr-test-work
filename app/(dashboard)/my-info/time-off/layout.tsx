@@ -1,8 +1,7 @@
-import { settingsIcon } from "@/assets/images";
+import { MyInfoBlock } from "@/components/shared/my-info-block";
 import { Button } from "@/components/ui/button";
+import { ChevronDown, Settings } from "lucide-react";
 import type { Metadata } from "next";
-import Image from "next/image";
-
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -16,16 +15,26 @@ export default function MyInfoLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<section>
+		<section className="relative">
 			<div className="w-full h-full bg-slate-300 pl-[25%] pr-24 pt-20">
 				<div className="flex justify-between items-center">
-					<h1 className="text-3xl font-medium">Alexandra Kuibyshevskaya</h1>
+					<h1 className="text-3xl font-bold">Alexandra Kuibyshevskaya</h1>
 					<div className="flex items-center gap-5">
-						<Button variant="outline" size="sm">
+						<Button
+							variant="outline"
+							size="sm"
+							className="flex items-center gap-1"
+						>
 							Request a change
+							<ChevronDown />
 						</Button>
-						<Button variant="outline" size="icon">
-							<Image src={settingsIcon} alt="settingsIcon" />
+						<Button
+							variant="outline"
+							size="sm"
+							className="flex items-center gap-1"
+						>
+							<Settings />
+							<ChevronDown />
 						</Button>
 					</div>
 				</div>
@@ -41,6 +50,7 @@ export default function MyInfoLayout({
 				</nav>
 			</div>
 			<div className="w-full bg-slate-100 pl-[25%]">abas</div>
+			<MyInfoBlock />
 		</section>
 	);
 }

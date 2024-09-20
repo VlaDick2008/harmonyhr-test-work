@@ -1,6 +1,6 @@
-import { helpIcon, notificationsIcon, settingsIcon } from "@/assets/images";
 import { Button } from "@/components/ui/button";
 import clsx from "clsx";
+import { Bell, CircleHelp, Settings } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import type React from "react";
@@ -30,18 +30,13 @@ export const Header: React.FC<Props> = ({ className }) => {
 			<SearchInput />
 			<div className="flex items-center gap-2">
 				<Button variant="ghost" size="icon">
-					<Image
-						src={settingsIcon}
-						width={24}
-						height={24}
-						alt="settings-icon"
-					/>
+					<Settings />
 				</Button>
 				<Button variant="ghost" size="icon">
-					<Image src={helpIcon} alt="settings-icon" />
+					<CircleHelp />
 				</Button>
 				<Button variant="ghost" size="icon">
-					<Image src={notificationsIcon} alt="settings-icon" />
+					<Bell />
 				</Button>
 				<Button variant="ghost" size="icon">
 					<Image
