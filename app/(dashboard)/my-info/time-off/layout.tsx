@@ -1,5 +1,4 @@
 import { settingsIcon } from "@/assets/images";
-import { MyInfoBlock } from "@/components/shared/my-info-block";
 import { Button } from "@/components/ui/button";
 import type { Metadata } from "next";
 import Image from "next/image";
