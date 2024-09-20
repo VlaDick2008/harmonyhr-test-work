@@ -29,7 +29,7 @@ export const TimeOffCard: React.FC<Props> = ({
 				)}
 			>
 				<CardTitle className="text-2xl">{cardTitle}</CardTitle>
-				<CardContent className="flex p-0 text-4xl font-bold items-center gap-2">
+				<CardContent className="flex p-0 text-4xl font-bold items-center gap-2 text-slate-700">
 					{children}
 				</CardContent>
 				<CardFooter className="flex flex-col gap-1 pb-0">

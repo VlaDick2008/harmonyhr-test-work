@@ -2,7 +2,8 @@ import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
 import { TimeOffCard } from "@/components/ui/time-off-card";
-import { Clock, Cross, FileClock, Mountain } from "lucide-react";
+import { TimeOffDayCard } from "@/components/ui/time-off-day-card";
+import { Clock, Cross, FileClock, Mountain, PiggyBank } from "lucide-react";
 
 export default function TimeOff() {
 	return (
@@ -47,11 +48,17 @@ export default function TimeOff() {
 					<p>0</p>
 				</TimeOffCard>
 			</div>
-			<div className="flex gap-2 mt-5 text-slate-500">
+			<div className="flex items-center gap-2 mt-5 text-slate-600">
 				<Clock />
-				<p className="hover:underline cursor-pointer">Upcoming Time Off</p>
+				<p className="text-xl">Upcoming Time Off</p>
 			</div>
 			<Separator className="my-5 h-1 bg-slate-400" />
+			<TimeOffDayCard date="Jan 27" description="1 day of sick">
+				<Cross size="36" />
+			</TimeOffDayCard>
+			<TimeOffDayCard date="Jul 4" description="Independence Day">
+				<PiggyBank size="36" />
+			</TimeOffDayCard>
 		</div>
 	);
 }
