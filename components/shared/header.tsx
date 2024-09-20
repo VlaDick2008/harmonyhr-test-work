@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import clsx from "clsx";
+import { cn } from "@/lib/utils";
 import { Bell, CircleHelp, Settings } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -13,7 +13,7 @@ interface Props {
 export const Header: React.FC<Props> = ({ className }) => {
 	return (
 		<header
-			className={clsx(
+			className={cn(
 				"flex items-center justify-between py-3.5 px-10",
 				className,
 			)}

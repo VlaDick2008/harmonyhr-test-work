@@ -1,13 +1,83 @@
+import { TimeOffTable } from "@/components/shared/time-off-table";
 import { Button } from "@/components/ui/button";
-import { Label } from "@/components/ui/label";
+import { Combobox } from "@/components/ui/combobox";
 import { Separator } from "@/components/ui/separator";
 import { TimeOffCard } from "@/components/ui/time-off-card";
 import { TimeOffDayCard } from "@/components/ui/time-off-day-card";
-import { Clock, Cross, FileClock, Mountain, PiggyBank } from "lucide-react";
+import {
+	Clock,
+	Cross,
+	FileClock,
+	Mountain,
+	PiggyBank,
+	RotateCcwSquare,
+} from "lucide-react";
+
+const comboboxPlaceholder = [
+	{
+		value: "next.js",
+		label: "Next.js",
+	},
+	{
+		value: "sveltekit",
+		label: "SvelteKit",
+	},
+	{
+		value: "nuxt.js",
+		label: "Nuxt.js",
+	},
+	{
+		value: "remix",
+		label: "Remix",
+	},
+	{
+		value: "astro",
+		label: "Astro",
+	},
+];
+
+const tableValues = [
+	{
+		date: "23/05/2024",
+		description: "Accrual for 23/05/2024 to 20/11/2024",
+		earnedDays: 3,
+		balance: 3,
+	},
+	{
+		date: "23/05/2024",
+		description: "Accrual for 23/05/2024 to 20/11/2024",
+		usedDays: 6,
+		balance: 3,
+	},
+	{
+		date: "23/05/2024",
+		description: "Accrual for 23/05/2024 to 20/11/2024",
+		earnedDays: 3,
+		balance: 3,
+	},
+	{
+		date: "23/05/2024",
+		description: "Accrual for 23/05/2024 to 20/11/2024",
+		earnedDays: 3,
+		balance: 3,
+	},
+	{
+		date: "23/05/2024",
+		description: "Accrual for 23/05/2024 to 20/11/2024",
+		usedDays: 6,
+		balance: 3,
+	},
+	{
+		date: "23/05/2024",
+		description: "Accrual for 23/05/2024 to 20/11/2024",
+		earnedDays: 3,
+		balance: 3,
+	},
+];
 
 export default function TimeOff() {
 	return (
-		<div className="bg-white rounded-b-lg mr-24 p-4 pt-12">
+		<div className="bg-white rounded-b-lg mr-24 px-4 pt-12 pb-5">
 			<div className="flex justify-between items-center">
 				<h1 className="text-3xl text-slate-600 flex gap-2 items-center">
 					<FileClock /> Time Off
@@ -48,10 +118,10 @@ export default function TimeOff() {
 					<p>0</p>
 				</TimeOffCard>
 			</div>
-			<div className="flex items-center gap-2 mt-5 text-slate-600">
+			<h2 className="text-xl text-slate-600 flex gap-2 items-center mt-5">
 				<Clock />
-				<p className="text-xl">Upcoming Time Off</p>
-			</div>
+				Upcoming Time Off
+			</h2>
 			<Separator className="my-5 h-1 bg-slate-400" />
 			<TimeOffDayCard date="Jan 27" description="1 day of sick">
 				<Cross size="36" />
@@ -59,6 +129,22 @@ export default function TimeOff() {
 			<TimeOffDayCard date="Jul 4" description="Independence Day">
 				<PiggyBank size="36" />
 			</TimeOffDayCard>
+			<h2 className="text-xl text-slate-600 flex gap-2 items-center my-5">
+				<RotateCcwSquare />
+				History
+			</h2>
+			<div className="flex justify-between mb-3">
+				<div className="flex gap-4">
+					<Combobox placeholder="Sick" size="lg" values={comboboxPlaceholder} />
+					<Combobox placeholder="All" size="sm" values={comboboxPlaceholder} />
+				</div>
+				<Combobox
+					placeholder="Balance History"
+					size="md"
+					values={comboboxPlaceholder}
+				/>
+			</div>
+			<TimeOffTable values={tableValues} />
 		</div>
 	);
 }

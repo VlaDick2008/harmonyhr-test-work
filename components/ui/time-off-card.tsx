@@ -1,4 +1,4 @@
-import clsx from "clsx";
+import { cn } from "@/lib/utils";
 import type React from "react";
 import { Card, CardContent, CardFooter, CardTitle } from "./card";
 
@@ -23,7 +23,7 @@ export const TimeOffCard: React.FC<Props> = ({
 	return (
 		<div className="text-center flex-1 flex flex-col">
 			<Card
-				className={clsx(
+				className={cn(
 					"text-center gap-1 flex flex-col items-center justify-center bg-slate-100 border-none py-4 flex-1",
 					className,
 				)}

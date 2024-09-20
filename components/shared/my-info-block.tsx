@@ -1,4 +1,4 @@
-import clsx from "clsx";
+import { cn } from "@/lib/utils";
 import {
 	CircleUserRound,
 	Clock,
@@ -23,7 +23,7 @@ interface Props {
 
 export const MyInfoBlock: React.FC<Props> = ({ className }) => {
 	return (
-		<div className={clsx("absolute top-0 left-[7%] space-y-5", className)}>
+		<div className={cn("absolute top-0 left-[7%] space-y-5", className)}>
 			<Image
 				src={
 					"https://i.pinimg.com/736x/94/c3/67/94c36724d7cf4dc3abf21eebd6b92ba6.jpg"

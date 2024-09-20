@@ -4,7 +4,7 @@ import { Inter } from "next/font/google";
 const inter = Inter({ subsets: ["latin"] });
 
 import "./globals.css";
-import clsx from "clsx";
+import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
 	title: "HarmonyHR",
@@ -19,7 +19,7 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en">
-			<body className={clsx("h-screen", inter.className)}>{children}</body>
+			<body className={cn("h-screen", inter.className)}>{children}</body>
 		</html>
 	);
 }

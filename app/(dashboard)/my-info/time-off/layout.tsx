@@ -55,7 +55,7 @@ export default function MyInfoLayout({
 					</Link>
 				</nav>
 			</div>
-			<div className="w-full h-full bg-slate-100 pl-[25%]">{children}</div>
+			<div className="w-full bg-slate-100 pl-[25%] pb-20">{children}</div>
 			<MyInfoBlock />
 		</section>
 	);

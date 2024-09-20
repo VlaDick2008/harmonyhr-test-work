@@ -1,4 +1,4 @@
-import clsx from "clsx";
+import { cn } from "@/lib/utils";
 import type React from "react";
 import { Separator } from "./separator";
 
@@ -18,9 +18,7 @@ export const TimeOffDayCard: React.FC<Props> = ({
 }) => {
 	return (
 		<>
-			<div
-				className={clsx("flex items-center gap-3 text-slate-700", className)}
-			>
+			<div className={cn("flex items-center gap-3 text-slate-700", className)}>
 				{children}
 				<div>
 					<p>{date}</p>
