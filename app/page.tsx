@@ -10,9 +10,8 @@ export default function Home() {
 		<section>
 			<p>Абстрактная главная страница</p>
 			<br />
-			<p>
-				Если редирект не произошёл (что либо не возможно, либо вы авторизованы),
-				то тыкните на эту кнопку:{" "}
+			<p className="flex gap-5 items-center">
+				Если вы хотите домой, в родную одну страницу, то тыкайте сюда:
 				<Button onClick={() => router.push("/login")}>Туда сюда</Button>
 			</p>
 		</section>

@@ -15,8 +15,8 @@ export default function MyInfoLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<section className="relative">
-			<div className="w-full h-full bg-slate-300 pl-[25%] pr-24 pt-20">
+		<section className="relative h-full">
+			<div className="w-full bg-slate-300 pl-[25%] pr-24 pt-20">
 				<div className="flex justify-between items-center">
 					<h1 className="text-3xl font-bold">Alexandra Kuibyshevskaya</h1>
 					<div className="flex items-center gap-5">
@@ -38,18 +38,24 @@ export default function MyInfoLayout({
 						</Button>
 					</div>
 				</div>
-				<nav className="mt-10 p-4 first-of-type:pl-0 [&>*]:p-4 [&>*]:rounded-t-md">
-					<Link href="/">Home</Link>
-					<Link className="bg-white" href="/my-info">
-						My Info
+				<nav className="mt-6 pt-4 [&>*]:h-full [&>*]:flex-1 text-center [&>*]:p-4 [&>*]:rounded-t-md flex justify-between">
+					<Link href="/">Personal</Link>
+					<Link href="/my-info">Job</Link>
+					<Link href="/people" className="bg-white">
+						Time Off
 					</Link>
-					<Link href="/people">People</Link>
-					<Link href="/hiring">Hiring</Link>
-					<Link href="/reports">Reports</Link>
-					<Link href="/files">Files</Link>
+					<Link href="/hiring">Emergency</Link>
+					<Link href="/reports">Documents</Link>
+					<Link href="/files">Notes</Link>
+					<Link href="/files">Benefits</Link>
+					<Link href="/files">Training</Link>
+					<Link href="/files">Assets</Link>
+					<Link href="/files" className="flex gap-2">
+						More <ChevronDown />
+					</Link>
 				</nav>
 			</div>
-			<div className="w-full bg-slate-100 pl-[25%]">abas</div>
+			<div className="w-full h-full bg-slate-100 pl-[25%]">{children}</div>
 			<MyInfoBlock />
 		</section>
 	);

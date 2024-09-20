@@ -13,12 +13,17 @@ interface Props {
 export const Header: React.FC<Props> = ({ className }) => {
 	return (
 		<header
-			className={clsx("flex items-center justify-between p-3.5", className)}
+			className={clsx(
+				"flex items-center justify-between py-3.5 px-10",
+				className,
+			)}
 		>
-			<h1 className="text-xl font-medium">HarmonyHR</h1>
+			<Link href="/" className="text-xl font-medium">
+				HarmonyHR
+			</Link>
 			<nav className="self-end [&>*]:p-4 [&>*]:rounded-t-md">
 				<Link href="/">Home</Link>
-				<Link className="bg-slate-300" href="/my-info">
+				<Link className="bg-slate-300" href="/my-info/time-off">
 					My Info
 				</Link>
 				<Link href="/people">People</Link>
