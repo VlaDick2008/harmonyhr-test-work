@@ -8,14 +8,15 @@ import {
 } from "@apollo/experimental-nextjs-app-support";
 
 function makeClient() {
-	const link = new HttpLink({
-		uri: process.env.API_ROUTE,
+	const httpLink = new HttpLink({
+		uri: process.env.NEXT_PUBLIC_API_ROUTE,
 		fetchOptions: { cache: "no-store" },
 	});
 
 	return new ApolloClient({
 		cache: new InMemoryCache(),
-		link: link,
+		link: httpLink,
+		connectToDevTools: true,
 	});
 }
 

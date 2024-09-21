@@ -5,6 +5,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 import "./globals.css";
 import { ApolloWrapper } from "@/components/apolo-wrapper";
+import { Toaster } from "@/components/ui/toaster";
 import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
@@ -21,7 +22,10 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body className={cn("h-screen", inter.className)}>
-				<ApolloWrapper>{children}</ApolloWrapper>
+				<ApolloWrapper>
+					<main>{children}</main>
+					<Toaster />
+				</ApolloWrapper>
 			</body>
 		</html>
 	);
