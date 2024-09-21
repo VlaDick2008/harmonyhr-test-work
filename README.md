@@ -15,6 +15,5 @@ bun run dev
 ```
 
 ## Vercel
-```bash
+
 https://harmonyhr-test-work.vercel.app/
-```
