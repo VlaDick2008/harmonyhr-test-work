@@ -1,10 +1,16 @@
-"use client";
-
 import { Button } from "@/components/ui/button";
-import { useRouter } from "next/navigation";
+import { cookies } from "next/headers";
+import { redirect } from "next/navigation";
 
 export default function Home() {
-	const router = useRouter();
+	const cookieStore = cookies();
+	const session = cookieStore.has("session");
+
+	if (session) {
+		redirect("/my-info/time-off");
+	} else {
+		redirect("/login");
+	}
 
 	return (
 		<section>
@@ -12,7 +18,7 @@ export default function Home() {
 			<br />
 			<p className="flex gap-5 items-center">
 				Если вы хотите домой, в родную одну страницу, то тыкайте сюда:
-				<Button onClick={() => router.push("/login")}>Туда сюда</Button>
+				<Button onClick={() => redirect("/my-info/time-off")}>Туда сюда</Button>
 			</p>
 		</section>
 	);
