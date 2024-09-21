@@ -16,11 +16,5 @@ bun run dev
 
 ## Vercel
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+https://harmonyhr-test-work.vercel.app/
 ```
