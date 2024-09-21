@@ -36,7 +36,7 @@ export const MyInfoHeader: React.FC<Props> = ({ className }) => {
 					<ChevronDown />
 				</Button>
 			</div>
-			<Button className="mr-9" size="icon" variant="ghost">
+			<Button className="mr-9 md:hidden flex" size="icon" variant="ghost">
 				<EllipsisVertical />
 			</Button>
 		</div>
