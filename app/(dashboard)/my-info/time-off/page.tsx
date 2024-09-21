@@ -86,12 +86,12 @@ export default function TimeOff() {
 	}
 
 	return (
-		<div className="bg-white rounded-b-lg mr-24 px-4 pt-12 pb-5">
-			<div className="flex justify-between items-center">
-				<h1 className="text-3xl text-slate-600 flex gap-2 items-center">
+		<div className="bg-white rounded-b-lg xl:mr-24 mr-0 xl:px-4 px-6 pt-12 pb-5">
+			<div className="flex md:justify-between md:items-center justify-end">
+				<h1 className="text-3xl text-slate-600 hidden gap-2 items-center md:flex">
 					<FileClock /> Time Off
 				</h1>
-				<div className="flex items-end gap-7">
+				<div className="flex md:flex-row flex-col items-end md:gap-7 gap-2">
 					<p>
 						Accrual Level Start Date{" "}
 						<span className="text-slate-500">03/09-2020</span>
@@ -100,32 +100,34 @@ export default function TimeOff() {
 				</div>
 			</div>
 			<Separator className="my-5 h-1 bg-slate-400" />
-			<div className="flex gap-14 px-20">
-				<TimeOffCard
-					cardTitle="Sick"
-					cardFooter="Days Available"
-					cardSecondaryFooter="1 day scheduled"
-					underCardFooter="Sick Full-Time"
-				>
-					<Cross size="36" />
-					<p>3</p>
-				</TimeOffCard>
-				<TimeOffCard
-					cardTitle="Annual Leave"
-					cardFooter="Days Available"
-					underCardFooter="Holiday Full-Time"
-				>
-					<Mountain size="36" />
-					<p>10.3</p>
-				</TimeOffCard>
-				<TimeOffCard
-					cardTitle="Comp/in Lieu Time"
-					cardFooter="Human Used(YTD)"
-					underCardFooter="Sick Full-Time"
-				>
-					<FileClock size="36" />
-					<p>0</p>
-				</TimeOffCard>
+			<div className="overflow-x-auto">
+				<div className="flex xl:gap-14 gap-5 xl:px-20 xl:w-full overflow-x-auto w-[1100px] ">
+					<TimeOffCard
+						cardTitle="Sick"
+						cardFooter="Days Available"
+						cardSecondaryFooter="1 day scheduled"
+						underCardFooter="Sick Full-Time"
+					>
+						<Cross size="36" />
+						<p>3</p>
+					</TimeOffCard>
+					<TimeOffCard
+						cardTitle="Annual Leave"
+						cardFooter="Days Available"
+						underCardFooter="Holiday Full-Time"
+					>
+						<Mountain size="36" />
+						<p>10.3</p>
+					</TimeOffCard>
+					<TimeOffCard
+						cardTitle="Comp/in Lieu Time"
+						cardFooter="Human Used(YTD)"
+						underCardFooter="Sick Full-Time"
+					>
+						<FileClock size="36" />
+						<p>0</p>
+					</TimeOffCard>
+				</div>
 			</div>
 			<h2 className="text-xl text-slate-600 flex gap-2 items-center mt-5">
 				<Clock />
@@ -142,7 +144,7 @@ export default function TimeOff() {
 				<RotateCcwSquare />
 				History
 			</h2>
-			<div className="flex justify-between mb-3">
+			<div className="flex md:flex-row flex-col gap-3 md:justify-between mb-3">
 				<div className="flex gap-4">
 					<Combobox placeholder="Sick" size="lg" values={comboboxPlaceholder} />
 					<Combobox placeholder="All" size="sm" values={comboboxPlaceholder} />

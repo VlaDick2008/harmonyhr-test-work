@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { useUserStore } from "@/store/user";
-import { Bell, CircleHelp, Settings } from "lucide-react";
+import { Bell, CircleHelp, Menu, Settings } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import type React from "react";
@@ -20,14 +20,14 @@ export const Header: React.FC<Props> = ({ className }) => {
 	return (
 		<header
 			className={cn(
-				"flex items-center justify-between py-3.5 px-10",
+				"flex items-center justify-between py-3.5 lx:px-10 px-6",
 				className,
 			)}
 		>
 			<Link href="/" className="text-xl font-medium">
 				HarmonyHR
 			</Link>
-			<nav className="self-end [&>*]:p-4 [&>*]:rounded-t-md">
+			<nav className="self-end [&>*]:p-4 [&>*]:rounded-t-md xl:block hidden">
 				<Link href="/">Home</Link>
 				<Link className="bg-slate-300" href="/my-info/time-off">
 					My Info
@@ -38,16 +38,24 @@ export const Header: React.FC<Props> = ({ className }) => {
 				<Link href="/files">Files</Link>
 			</nav>
 
-			<SearchInput />
 			<div className="flex items-center gap-2">
-				<Button variant="ghost" size="icon">
-					<Settings />
-				</Button>
-				<Button variant="ghost" size="icon">
-					<CircleHelp />
-				</Button>
-				<Button variant="ghost" size="icon">
-					<Bell />
+				<SearchInput />
+			</div>
+
+			<div className="flex items-center gap-2">
+				<div className="md:flex hidden">
+					<Button variant="ghost" size="icon">
+						<Settings />
+					</Button>
+					<Button variant="ghost" size="icon">
+						<CircleHelp />
+					</Button>
+					<Button variant="ghost" size="icon">
+						<Bell />
+					</Button>
+				</div>
+				<Button variant="ghost" size="icon" className="xl:hidden">
+					<Menu />
 				</Button>
 				<Button variant="ghost" size="icon">
 					{avatar ? (

@@ -1,4 +1,4 @@
-import { showDecimals } from "@/lib/utils";
+import { cn, showDecimals } from "@/lib/utils";
 import type React from "react";
 import {
 	Table,
@@ -23,7 +23,7 @@ interface Props {
 
 export const TimeOffTable: React.FC<Props> = ({ className, values }) => {
 	return (
-		<Table className={className}>
+		<Table className={cn("md:w-full w-[800px]", className)}>
 			<TableHeader className="bg-slate-200">
 				<TableRow>
 					<TableHead>Date</TableHead>
