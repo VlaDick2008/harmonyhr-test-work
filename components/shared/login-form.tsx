@@ -12,7 +12,6 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
-import { loginUser } from "@/lib/auth";
 import { useUserStore } from "@/store/user";
 import { gql, useMutation } from "@apollo/client";
 import { useRouter } from "next/navigation";

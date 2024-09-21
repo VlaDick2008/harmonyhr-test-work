@@ -1,4 +1,7 @@
+"use client";
+
 import { cn } from "@/lib/utils";
+import { useUserStore } from "@/store/user";
 import {
 	CircleUserRound,
 	Clock,
@@ -13,26 +16,45 @@ import {
 	Users,
 } from "lucide-react";
 import Image from "next/image";
-import type React from "react";
+import React from "react";
 import { Button } from "../ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
+import { Skeleton } from "../ui/skeleton";
 
 interface Props {
+	session: string;
+
 	className?: string;
 }
 
-export const MyInfoBlock: React.FC<Props> = ({ className }) => {
+export const MyInfoBlock: React.FC<Props> = ({ className, session }) => {
+	const { avatar, setData } = useUserStore();
+
+	React.useEffect(() => {
+		fetch("/api/user", {
+			method: "POST",
+			body: JSON.stringify(session),
+		})
+			.then((responce) => responce.json())
+			.then(({ myProfile }) => setData(myProfile));
+	}, [session, setData]);
+
 	return (
 		<div className={cn("absolute top-0 left-[7%] space-y-5", className)}>
-			<Image
-				src={
-					"https://i.pinimg.com/736x/94/c3/67/94c36724d7cf4dc3abf21eebd6b92ba6.jpg"
-				}
-				className="rounded-full translate-y-9"
-				width={250}
-				height={250}
-				alt="avatar"
-			/>
+			{avatar ? (
+				<Image
+					src={
+						avatar ||
+						"https://i.pinimg.com/736x/94/c3/67/94c36724d7cf4dc3abf21eebd6b92ba6.jpg"
+					}
+					className="rounded-full translate-y-9"
+					width={250}
+					height={250}
+					alt="avatar"
+				/>
+			) : (
+				<Skeleton className="h-[250px] w-[250px] rounded-full translate-y-9 border border-slate-600" />
+			)}
 
 			<Card>
 				<CardContent className="[&>div]:flex [&>div]:gap-2 [&>div]:items-center space-y-3 pt-6 text-sm">

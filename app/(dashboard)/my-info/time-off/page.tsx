@@ -12,6 +12,8 @@ import {
 	PiggyBank,
 	RotateCcwSquare,
 } from "lucide-react";
+import { cookies } from "next/headers";
+import { redirect } from "next/navigation";
 
 const comboboxPlaceholder = [
 	{
@@ -76,6 +78,13 @@ const tableValues = [
 ];
 
 export default function TimeOff() {
+	const cookieStore = cookies();
+	const session = cookieStore.has("session");
+
+	if (!session) {
+		redirect("/login");
+	}
+
 	return (
 		<div className="bg-white rounded-b-lg mr-24 px-4 pt-12 pb-5">
 			<div className="flex justify-between items-center">
